@@ -13,7 +13,7 @@ export default function App() {
     async function sttFromMic() {
         const tokenObj = await getTokenOrRefresh();
         const speechConfig = speechsdk.SpeechConfig.fromAuthorizationToken(tokenObj.authToken, tokenObj.region);
-        speechConfig.speechRecognitionLanguage = 'en-US';
+        speechConfig.speechRecognitionLanguage = 'fr-FR';
         
         const audioConfig = speechsdk.AudioConfig.fromDefaultMicrophoneInput();
         const recognizer = new speechsdk.SpeechRecognizer(speechConfig, audioConfig);
@@ -82,7 +82,7 @@ export default function App() {
 
         const tokenObj = await getTokenOrRefresh();
         const speechConfig = speechsdk.SpeechConfig.fromAuthorizationToken(tokenObj.authToken, tokenObj.region);
-        speechConfig.speechRecognitionLanguage = 'en-US';
+        speechConfig.speechRecognitionLanguage = 'fr-FR';
 
         const audioConfig = speechsdk.AudioConfig.fromWavFileInput(audioFile);
         const recognizer = new speechsdk.SpeechRecognizer(speechConfig, audioConfig);
